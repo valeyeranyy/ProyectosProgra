@@ -10,7 +10,6 @@ namespace musica
     {
         public string nombredelartista;
         public string miembros;
-        public string miembros;
         public string generosdelartista;
         public string albums;
         public int periododeactividad;

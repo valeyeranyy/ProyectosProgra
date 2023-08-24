@@ -12,6 +12,6 @@ namespace musica
         public float duracion;
         public string generos;
         public int numerodepista;
-        public string copositores;
+        public string compositores;
     }
 }

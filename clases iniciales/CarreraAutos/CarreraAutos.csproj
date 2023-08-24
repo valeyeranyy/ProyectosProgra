@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{07974F37-2D07-4CB2-864F-9694DB5C89D9}</ProjectGuid>
+    <ProjectGuid>{04217B3B-F4F1-487D-AC3A-C99C7257040F}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>clases_iniciales</RootNamespace>
-    <AssemblyName>clases iniciales</AssemblyName>
+    <RootNamespace>CarreraAutos</RootNamespace>
+    <AssemblyName>CarreraAutos</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,10 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="color.cs" />
-    <Compile Include="..\..\ProyectosProgra\mochila.cs">
-      <Link>mochila.cs</Link>
-    </Compile>
+    <Compile Include="AutoCarreras.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
