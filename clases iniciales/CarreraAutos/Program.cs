@@ -22,10 +22,14 @@ namespace CarreraAutos
 
             PistaCarreras hnsRodriguez = new PistaCarreras();
             hnsRodriguez.nombre = "Autodromo Hermanos Rofriguez";
-
+            hnsRodriguez.longitud = 5.6f;
             //Mando a competir a mis coches
             hnsRodriguez.Competir(ferrari, mcLaren);
 
+            ferrari.PonerGas(20);
+            ferrari.Acelerar(30);
+            ferrari.Arrancar();
+            ferrari.Frenar();
             //Esta instruccion espera a que des enter para contnuar
             Console.ReadLine();
 

@@ -28,24 +28,6 @@ namespace CarreraAutos
             {
                 Console.WriteLine("Hubo empate");
             }
-        
-            public void Arrancar()
-            {
-                if (gasolina > 0)
-                {   //Consume 0.01 litros de gas cada que arranca
-                    gasolina = gasolina - 0.01f;
-                    Console.WriteLine("Arrancando" + modelo + "le quedan" + gasolina + "1 de gas.");
-                }
-                else
-                {
-                    Console.WriteLine("No se pudo arrancar " + modelo + "sin gasolina.");
-                }
-
-            }
         }
-
-
-
-
     }             
 }      
