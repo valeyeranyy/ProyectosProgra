@@ -1,0 +1,7 @@
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\bin\Debug\CarreraAutos.exe.config
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\bin\Debug\CarreraAutos.exe
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\bin\Debug\CarreraAutos.pdb
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\obj\Debug\CarreraAutos.csproj.AssemblyReference.cache
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\obj\Debug\CarreraAutos.csproj.CoreCompileInputs.cache
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\obj\Debug\CarreraAutos.exe
+C:\Users\vale.carrascoa\Documents\ProyectosProgra\clases iniciales\CarreraAutos\obj\Debug\CarreraAutos.pdb

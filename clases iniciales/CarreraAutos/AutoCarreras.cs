@@ -11,5 +11,6 @@ namespace CarreraAutos
         public string modelo;
         public float peso;
         public int velocidad;
+        public float gasolina;
     }
 }

@@ -6,10 +6,29 @@ using System.Threading.Tasks;
 
 namespace CarreraAutos
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            AutoCarreras ferrari = new AutoCarreras();
+            ferrari.modelo = "Ferrari F150";
+            ferrari.peso = 1.3f;
+            ferrari.velocidad = 230;
+
+            AutoCarreras mcLaren = new AutoCarreras();
+            mcLaren.modelo = "McLaren A45S";
+            mcLaren.peso = 0.98f;
+            mcLaren.velocidad = 280;//sonkm/h
+
+            PistaCarreras hnsRodriguez = new PistaCarreras();
+            hnsRodriguez.nombre = "Autodromo Hermanos Rofriguez";
+
+            //Mando a competir a mis coches
+            hnsRodriguez.Competir(ferrari, mcLaren);
+
+            //Esta instruccion espera a que des enter para contnuar
+            Console.ReadLine();
+
         }
     }
 }
