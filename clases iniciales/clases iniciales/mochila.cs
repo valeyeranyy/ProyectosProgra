@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace clasesiniciales
 {
     //las palabras reservadas (en azul) ayudan a definir una clase. Son identificadores
-    public class Mochila
+    public class mochila
     {
             //int es para numeros enteros
             public int NumDeBolsas;
@@ -19,7 +19,7 @@ namespace clasesiniciales
             public string Disenio;
             public string Material;
             public int NumDeLlaveros;
-            Color color;
+            public Color color;
     }
 }
 

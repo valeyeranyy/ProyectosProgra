@@ -11,7 +11,7 @@ namespace clasesiniciales
         //este es el metodo main. Sirve como punto de entrada para el programa (inicia desde aqui):
         static void Main(string[] args)
         {
-            Mochila mochilaAna = new Mochila();
+            mochila mochilaAna = new mochila();
             mochilaAna.Disenio = "Piolín";
             mochilaAna.Material = "Vinyl";
             mochilaAna.NumDeBolsas = 3;
@@ -23,7 +23,7 @@ namespace clasesiniciales
             mochilaAna.color.Verde = 20;
             mochilaAna.color.Azul = 33;
 
-            Mochila mochilaBeto = new Mochila();
+            mochila mochilaBeto = new mochila();
             mochilaBeto.Material = "piel";
             mochilaBeto.Disenio = "Pokemon";
             mochilaBeto.NumDeBolsas = 3;
@@ -31,12 +31,12 @@ namespace clasesiniciales
             mochilaBeto.Precio = 179.50f;
             mochilaBeto.Tamanio = "Grande";
             mochilaBeto.color = new Color();
-            mochilaBeto.color.Rojo = 0;
+            mochilaBeto.color.Rojo = 7;
             mochilaBeto.color.Verde = 128;
             mochilaBeto.color.Azul = 210;
 
 
-            Mochila mochilaKarla = new Mochila();
+            mochila mochilaKarla = new mochila();
             mochilaKarla.Material = "piel";
             mochilaKarla.Disenio = "Mariposa";
             mochilaKarla.NumDeBolsas = 4;
@@ -44,9 +44,9 @@ namespace clasesiniciales
             mochilaKarla.Precio = 179.50f;
             mochilaKarla.Tamanio = "Grande";
             mochilaKarla.color = new Color();
-            mochilaKarla.color.Rojo = 0;
+            mochilaKarla.color.Rojo = 3;
             mochilaKarla.color.Verde = 128;
-            mochilaKarla.color.Azul = 210;
+            mochilaKarla.color.Azul = 215;
 
 
             SmartPhone SmartPhoneVal = new SmartPhone();
