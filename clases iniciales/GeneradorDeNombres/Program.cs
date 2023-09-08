@@ -8,7 +8,10 @@ namespace GeneradorDeNombres
 {
     class Program
     {
+        GeneradorDeNombresVillano generador =
+              new GeneradorDeNombresVillano();
 
-      
+        genrador.generar(15);
+            Console.Read();
     }
 }

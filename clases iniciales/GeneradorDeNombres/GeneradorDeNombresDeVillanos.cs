@@ -6,10 +6,21 @@ using System.Threading.Tasks;
 
 namespace GeneradorDeNombres
 {
-    class GeneradorDeNombresDeVillanos
+    public class GeneradorDeNombresDeVillanos
     {
-        public string[] descripciones = {"Vengativo", "oscuro", "rojo"};
-        public string[] tipoDeCriaturas = { "gargola", "gnomo", "criatura" };
-        public string[] origen = { "del este", "del oeste", "del sur" };
+        //estos son atributos        Enero 1       febrero 2    marzo 3
+        public string[] titulos = {"The Black", "The Kid", "The wicked"};
+                                   //0             1            2
+        public string[] razas = { "gargola", "gnomo", "criatura" };
+        public string[] origenes = {"of the night", "of the seas", "of the north" };
+    }
+    //se declara un metodo dentro de la misma clase. Se llamara: generar
+    public void generar(int mes);
+    {
+        if (mes > 12)
+  
+       Console.WriteLine(titulo[mes]+"" + raza[dia] + origenes[color]);
     }
 }
+
+
