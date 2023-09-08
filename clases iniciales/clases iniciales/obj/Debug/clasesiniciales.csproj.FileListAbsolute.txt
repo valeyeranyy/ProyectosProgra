@@ -1,0 +1,2 @@
+C:\Users\valeria.carrascoa\Documents\GitHub\ProyectosProgra\clases iniciales\clases iniciales\obj\Debug\clasesiniciales.csproj.AssemblyReference.cache
+C:\Users\valeria.carrascoa\Documents\GitHub\ProyectosProgra\clases iniciales\clases iniciales\obj\Debug\clasesiniciales.csproj.CoreCompileInputs.cache
