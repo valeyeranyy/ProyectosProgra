@@ -64,11 +64,14 @@ public class ControladorJugador : MonoBehaviour
         }
 
         miAnimador.SetFloat("vel_vert", velActualVert);
+        
+
+
     }
 
     public void comprobarPiso()
     {
-        //lanzo un rayo de deteccion de colisiones hacoia abajo desde la posicion del este objeto (cavernicula)
+        //lanzo un rayo de deteccion de colisiones hacia abajo desde la posicion del este objeto (cavernicola)
         enPiso = Physics2D.Raycast(
         transform.position, //desde donde
             Vector2.down,//hacia abajo

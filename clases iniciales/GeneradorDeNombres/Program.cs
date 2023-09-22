@@ -11,7 +11,7 @@ namespace GeneradorDeNombres
         GeneradorDeNombresVillano generador =
               new GeneradorDeNombresVillano();
 
-        genrador.generar(15);
+        generador.generar(15);
             Console.Read();
     }
 }
