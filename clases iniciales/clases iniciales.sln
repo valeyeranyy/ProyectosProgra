@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArreglosSemana", "ArreglosS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneradorDeNombres", "GeneradorDeNombres\GeneradorDeNombres.csproj", "{1B757699-5DD9-4A45-9FD3-D748EBCB8560}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracticaConstructores", "PracticaConstructores\PracticaConstructores.csproj", "{992233CE-4A3D-445A-8B20-0953A972CA70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1B757699-5DD9-4A45-9FD3-D748EBCB8560}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B757699-5DD9-4A45-9FD3-D748EBCB8560}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B757699-5DD9-4A45-9FD3-D748EBCB8560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{992233CE-4A3D-445A-8B20-0953A972CA70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{992233CE-4A3D-445A-8B20-0953A972CA70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{992233CE-4A3D-445A-8B20-0953A972CA70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{992233CE-4A3D-445A-8B20-0953A972CA70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
