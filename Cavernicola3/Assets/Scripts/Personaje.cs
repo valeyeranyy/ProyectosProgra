@@ -22,5 +22,11 @@ public class Personaje : MonoBehaviour
         hp = hp - puntos;
         miAnimador.SetTrigger("Dañar");
     }
-
+    public void perderVida(int puntosVida, GameObject atacante)
+    {
+        print(name + "Muere por " + atacante.name);
+        vidas = vidas - puntosVida;
+        hp = 0;
+    }
 }
+
