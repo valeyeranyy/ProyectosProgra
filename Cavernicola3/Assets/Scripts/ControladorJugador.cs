@@ -11,6 +11,7 @@ public class ControladorJugador : MonoBehaviour
     private float saltosRest;
     private Rigidbody2D MiCuerpo;
     private Animator miAnimador;
+    private ReproductorSonidos misSonidos;
     
     
     // Start is called before the first frame update
@@ -18,6 +19,7 @@ public class ControladorJugador : MonoBehaviour
     {
         MiCuerpo = GetComponent<Rigidbody2D>();
         miAnimador = GetComponent<Animator>();
+        misSonidos = GetComponent<ReproductorSonidos>();
         saltosRest = saltosMax;
     }
 
@@ -64,8 +66,8 @@ public class ControladorJugador : MonoBehaviour
         }
 
         miAnimador.SetFloat("vel_vert", velActualVert);
-        
 
+        
 
     }
 
@@ -77,6 +79,7 @@ public class ControladorJugador : MonoBehaviour
             Vector2.down,//hacia abajo
             0.1f//distancia
             );
+        misSonidos.reproducir("SALTAR");
 
     }
 }
