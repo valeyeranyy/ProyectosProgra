@@ -11,9 +11,12 @@ public class Personaje : MonoBehaviour
     public int vidas = 3;
     public GameObject efectoSangrePrefab;
     private Animator miAnimador;
+    private ReproductorSonidos misSonidos;
+
     void Start()
     {
-        miAnimador.GetComponent<Animator>();
+        miAnimador=GetComponent<Animator>(); 
+        misSonidos = GetComponent<ReproductorSonidos>();
     }
     public void hacerDanio(int puntos, GameObject atacante)
     {
@@ -23,6 +26,9 @@ public class Personaje : MonoBehaviour
         hp = hp - puntos;
         //activo el trigger llamdo dañar en el animator
         miAnimador.SetTrigger("Dañar");
+        GameObject sangre = Instantiate(efectoSangrePrefab, transform);
+        misSonidos.reproducir("DAÑAR");
+
     }
     public void perderVida(int puntosVida, GameObject atacante)
     {
@@ -35,6 +41,8 @@ public class Personaje : MonoBehaviour
         hp = 0;
         //creo una instancia de la parte de sangre
         GameObject sangre = Instantiate(efectoSangrePrefab,transform);
+        misSonidos.reproducir("MATAR");
+
     }
 }
 

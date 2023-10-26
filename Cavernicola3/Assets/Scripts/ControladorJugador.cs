@@ -63,6 +63,7 @@ public class ControladorJugador : MonoBehaviour
         {
             saltosRest--;//hace que se le reste uno a los saltos restantes
             MiCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
+            misSonidos.reproducir("SALTAR");
         }
 
         miAnimador.SetFloat("vel_vert", velActualVert);

@@ -8,7 +8,12 @@ public class ZonaMuerte : MonoBehaviour
     public int puntosVida = 1;
     public GameObject efectoSplashPrefab;
     private ReproductorSonidos misSonidos;
+    void Start()
+    {
+        misSonidos = GetComponent<ReproductorSonidos>();
+    }
     private void OnTriggerEnter2D(Collider2D trigger)
+   
     {
         //se muestra en consola la leyenda
         print(name + "hizo colision con" + trigger.gameObject.name);
