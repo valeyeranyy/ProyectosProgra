@@ -31,13 +31,13 @@ public class EnemigoPequeño : MonoBehaviour
         if (distancia < distanciaAgro)
         { //el heroe esta dentro de la zona de agro
             if (posHeroe.x > posYo.x)
-            {
+            {  //camina hacia la derecha
                 MiCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 miAnimador.SetBool("CAMINANDO", true);
             }   
             else
-            {
+            {  //camina hacia la izquierda agregando el sigo de menos
                 MiCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 miAnimador.SetBool("CAMINANDO", true);
