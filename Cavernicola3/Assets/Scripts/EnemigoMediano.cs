@@ -34,7 +34,7 @@ public class EnemigoMediano : MonoBehaviour
         { //el heroe esta fuera de la zona de agro
             if (posHeroe.x > posYo.x)
             {
-                //el heroe derecha villano
+                //el heroe esta a la derecha del villano
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 MiCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
                 miAnimador.SetBool("CAMINANDO", true);
@@ -42,7 +42,7 @@ public class EnemigoMediano : MonoBehaviour
             }
             else
             {
-                //el heroe izquierda villano
+                //el heroe esta a la izquierda del villano
                 transform.rotation = Quaternion.Euler(0, 180, 0);
                 MiCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
                 miAnimador.SetBool("CAMINANDO", true);
@@ -53,7 +53,7 @@ public class EnemigoMediano : MonoBehaviour
         {
             if (posHeroe.x > posYo.x)
             {
-                transform.rotation = Quaternion.Euler(0, 180, 0);
+                transform.rotation = Quaternion.Euler(0, 0, 0);
                 MiCuerpo.velocity = new Vector3(0, 0, 0);
                 miAnimador.SetBool("ATACANDO", true);
                 miAnimador.SetBool("CAMINANDO", false);

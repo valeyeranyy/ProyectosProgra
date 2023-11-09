@@ -50,4 +50,17 @@ public class EnemigoPequeño : MonoBehaviour
             miAnimador.SetBool("CAMINANDO", false);
         }
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        print(name + "hizo colisionm con" + collision.gameObject.name);
+        GameObject otro = collision.gameObject;
+        if (otro.tag == "Player")
+        {
+            //Accede al componente de tipo Personaje del objeto con el que choqué
+            Personaje elPerso = otro.GetComponent<Personaje>();
+            //Aplica el daño al otro invocando el metodo hacer daño
+            elPerso.hacerDanio(puntosDanio, this.gameObject);
+            
+        }
+    }
 }

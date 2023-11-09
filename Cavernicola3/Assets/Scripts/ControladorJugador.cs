@@ -65,6 +65,11 @@ public class ControladorJugador : MonoBehaviour
             MiCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
             misSonidos.reproducir("SALTAR");
         }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            miAnimador.SetTrigger("atacar");
+
+        }
 
         miAnimador.SetFloat("vel_vert", velActualVert);
 
@@ -83,4 +88,7 @@ public class ControladorJugador : MonoBehaviour
         misSonidos.reproducir("SALTAR");
 
     }
+  
+    
 }
+
