@@ -9,6 +9,9 @@ public class Personaje : MonoBehaviour
     public int hpMax = 100;
     public int score = 0;
     public int vidas = 3;
+    public int puntosVida = 10;
+    public bool aturdido = false;
+    public bool muerto = false;
     public GameObject efectoSangrePrefab;
     private Animator miAnimador;
     private ReproductorSonidos misSonidos;
@@ -28,7 +31,30 @@ public class Personaje : MonoBehaviour
         miAnimador.SetTrigger("Dañar");
         GameObject sangre = Instantiate(efectoSangrePrefab, transform);
         misSonidos.reproducir("DAÑAR");
+       
 
+        aturdido = true;
+        if (hp <= 0)
+        {
+            muerto = true;
+            vidas--;
+            hp = 0;
+            Personaje elPerso = GetComponent<Personaje>();
+            elPerso.perderVida(puntosVida, this.gameObject);
+            miAnimador.SetBool("Morir", true);
+        }
+        else (hp >= 1);
+
+
+            //programo que se ejecute el metodo
+            //desaturdir dentro de 1 segundo
+            Invoke("desaturdir", 1);
+       
+    }
+    //creo metdodo nuevo para que no este siempre aturdido mi personaje
+    private void desaturdir()
+    {
+        aturdido = false;
     }
     public void perderVida(int puntosVida, GameObject atacante)
     {
@@ -44,5 +70,6 @@ public class Personaje : MonoBehaviour
         misSonidos.reproducir("MATAR");
 
     }
+       
 }
 

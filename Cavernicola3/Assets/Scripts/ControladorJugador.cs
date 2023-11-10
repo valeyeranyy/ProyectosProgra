@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//este controlador se comunica con el usuario
 public class ControladorJugador : MonoBehaviour
 {
     public float velocidadCaminar = 3;
@@ -13,6 +13,7 @@ public class ControladorJugador : MonoBehaviour
     private Animator miAnimador;
     private ReproductorSonidos misSonidos;
     public int puntosDanio = 5;
+    private Personaje miPersonaje;
     
     // Start is called before the first frame update
     void Start()
@@ -21,6 +22,7 @@ public class ControladorJugador : MonoBehaviour
         miAnimador = GetComponent<Animator>();
         misSonidos = GetComponent<ReproductorSonidos>();
         saltosRest = saltosMax;
+        miPersonaje = GetComponent<Personaje>();
     }
 
     // Update is called once per frame
@@ -32,13 +34,14 @@ public class ControladorJugador : MonoBehaviour
 
         float velActualVert = MiCuerpo.velocity.y;
         float movHoriz = Input.GetAxis("Horizontal");
-
-        if (movHoriz > 0)
+                         //y mi personaje no esta atrudido
+        if (movHoriz > 0 && !miPersonaje.aturdido)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             MiCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
             //cavernicola.flipX = false;
             miAnimador.SetBool("CAMINANDO", true);
+           
         }
         else if (movHoriz < 0)
         {
@@ -46,12 +49,14 @@ public class ControladorJugador : MonoBehaviour
             MiCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
             //cavernicola.flipX = true;
             miAnimador.SetBool("CAMINANDO", true);
+          
         }
 
         else
         {
             MiCuerpo.velocity = new Vector3(0, velActualVert, 0);
             miAnimador.SetBool("CAMINANDO", false);
+        
         }
 
         if (enPiso)//se reincia todo
@@ -59,20 +64,18 @@ public class ControladorJugador : MonoBehaviour
             saltosRest = saltosMax;//los saltos restantes se reinician a los maximos
         }
 
-        if (Input.GetButtonDown("Jump") && saltosRest > 0)//Salto solo si mis saltos restantes son mayor a cero
+        if (Input.GetButtonDown("Jump") && saltosRest > 0  && !miPersonaje.aturdido)//Salto solo si mis saltos restantes son mayor a cero
         {
             saltosRest--;//hace que se le reste uno a los saltos restantes
             MiCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
             misSonidos.reproducir("SALTAR");
         }
-        if (Input.GetButtonDown("Fire1"))
+        //spolo puedo atacar si presiono el boton de fire1
+        if (Input.GetButtonDown("Fire1") && !miPersonaje.aturdido)
         {
             miAnimador.SetTrigger("atacar");
 
         }
-        
-        miAnimador.SetFloat("vel_vert", velActualVert);
-
         
 
     }
