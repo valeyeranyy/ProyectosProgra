@@ -12,7 +12,7 @@ public class ControladorJugador : MonoBehaviour
     private Rigidbody2D MiCuerpo;
     private Animator miAnimador;
     private ReproductorSonidos misSonidos;
-    
+    public int puntosDanio = 5;
     
     // Start is called before the first frame update
     void Start()
@@ -70,7 +70,7 @@ public class ControladorJugador : MonoBehaviour
             miAnimador.SetTrigger("atacar");
 
         }
-
+        
         miAnimador.SetFloat("vel_vert", velActualVert);
 
         
@@ -88,7 +88,21 @@ public class ControladorJugador : MonoBehaviour
         misSonidos.reproducir("SALTAR");
 
     }
-  
-    
+    private void OnTriggerEnter2D(Collider2D trigger)
+
+    {
+        //se muestra en consola la leyenda
+        print(name + "hizo colision con" + trigger.gameObject.name);
+        GameObject otro = trigger.gameObject;
+        if (otro.tag == "Enemigo")
+        {
+            //Accede al componente de tipo Personaje del objeto con el que choque
+            Personaje elPerso = otro.GetComponent<Personaje>();
+            //Aplico el daño al otro invocando el metodo hacer daño
+            elPerso.hacerDanio(puntosDanio, this.gameObject);
+
+        }
+    }
+
 }
 
