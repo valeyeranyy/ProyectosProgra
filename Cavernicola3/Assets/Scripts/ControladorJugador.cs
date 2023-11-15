@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 //este controlador se comunica con el usuario
 public class ControladorJugador : MonoBehaviour
 {
-    public float velocidadCaminar = 3;
-    public float fuerzaSalto = 20;
+    public float velocidadCaminar = 3f;
+    public float fuerzaSalto = 20f;
     public bool enPiso = false;//Grounded
     public float saltosMax = 2f;
     private float saltosRest;
@@ -35,7 +36,7 @@ public class ControladorJugador : MonoBehaviour
         float velActualVert = MiCuerpo.velocity.y;
         float movHoriz = Input.GetAxis("Horizontal");
                          //y mi personaje no esta atrudido
-        if (movHoriz > 0 && !miPersonaje.aturdido)
+        if (movHoriz > 0 && !miPersonaje.aturdido && !miPersonaje.muerto)
         {
             transform.rotation = Quaternion.Euler(0, 0, 0);
             MiCuerpo.velocity = new Vector3(velocidadCaminar, velActualVert, 0);
@@ -43,7 +44,7 @@ public class ControladorJugador : MonoBehaviour
             miAnimador.SetBool("CAMINANDO", true);
            
         }
-        else if (movHoriz < 0)
+        else if (movHoriz < 0 && !miPersonaje.aturdido && !miPersonaje.muerto)
         {
             transform.rotation = Quaternion.Euler(0, 180, 0);
             MiCuerpo.velocity = new Vector3(-velocidadCaminar, velActualVert, 0);
@@ -64,22 +65,29 @@ public class ControladorJugador : MonoBehaviour
             saltosRest = saltosMax;//los saltos restantes se reinician a los maximos
         }
 
-        if (Input.GetButtonDown("Jump") && saltosRest > 0  && !miPersonaje.aturdido)//Salto solo si mis saltos restantes son mayor a cero
+        if (Input.GetButtonDown("Jump") && saltosRest > 0  && !miPersonaje.aturdido && !miPersonaje.muerto)//Salto solo si mis saltos restantes son mayor a cero
         {
             saltosRest--;//hace que se le reste uno a los saltos restantes
             MiCuerpo.AddForce(new Vector3(0, fuerzaSalto, 0), ForceMode2D.Impulse);
             misSonidos.reproducir("SALTAR");
         }
         //spolo puedo atacar si presiono el boton de fire1
-        if (Input.GetButtonDown("Fire1") && !miPersonaje.aturdido)
+        if (Input.GetButtonDown("Fire1") && !miPersonaje.aturdido && !miPersonaje.muerto)
         {
             miAnimador.SetTrigger("atacar");
 
         }
-        
+       
+        if(miPersonaje.hp<=0)
+        {
+            Invoke("morirPersonaje", 1.0f);
+        }
 
     }
-
+    public void morirPersonaje()
+    {
+        SceneManager.LoadScene(1);
+    }
     public void comprobarPiso()
     {
         //lanzo un rayo de deteccion de colisiones hacia abajo desde la posicion del este objeto (cavernicola)

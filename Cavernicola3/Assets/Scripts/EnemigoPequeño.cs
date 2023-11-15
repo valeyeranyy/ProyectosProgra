@@ -17,8 +17,7 @@ public class EnemigoPequeño : MonoBehaviour
         miAnimador = GetComponent<Animator>();
         MiCuerpo = GetComponent<Rigidbody2D>();
         heroe = GameObject.FindWithTag("Player");
-        miPersonaje = GetComponent<Personaje>();
-
+       
     }
 
     // Update is called once per frame
@@ -31,8 +30,6 @@ public class EnemigoPequeño : MonoBehaviour
         //lo que esta entre parentesis calcula el vector. Despues de los parentesis, es decir, la magnitud calcula la distancia de ese vector
         float distancia = (posYo - posHeroe).magnitude;
         if (distancia < distanciaAgro)
-            && !miPersonaje.aturdido;
-            && !miPersonaje.muerto;
         { //el heroe esta dentro de la zona de agro
             if (posHeroe.x > posYo.x)
             {  //camina hacia la derecha

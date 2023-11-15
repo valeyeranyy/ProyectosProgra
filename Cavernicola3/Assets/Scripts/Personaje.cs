@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Personaje : MonoBehaviour
 {
-    public int hp = 60;
+    public int hp = 30;
     public int hpMax = 100;
     public int score = 0;
     public int vidas = 3;
@@ -31,31 +31,26 @@ public class Personaje : MonoBehaviour
         miAnimador.SetTrigger("Dañar");
         GameObject sangre = Instantiate(efectoSangrePrefab, transform);
         misSonidos.reproducir("DAÑAR");
-       
+        //comando que programa que se ejecute el metodo
+        //desaturdir dentro de 1 segundo
+        Invoke("desaturdir", 4);
 
         aturdido = true;
-        if (hp <= 0)
-        {
-            muerto = true;
-            vidas--;
-            hp = 0;
+        //si mi hp llega a cero, invoco el metodo perderVida
+        if (hp <= 0 &&vidas>0)
+        {   
             Personaje elPerso = GetComponent<Personaje>();
-            elPerso.perderVida(puntosVida, this.gameObject);
-            miAnimador.SetBool("Morir", true);
+            elPerso.matar(this.gameObject);
+        }  
+        else if (hp<=0&&vidas>0)
+        {
+            vidas--;
+            muerto = true;
+
         }
-        else (hp >= 1);
 
-
-            //programo que se ejecute el metodo
-            //desaturdir dentro de 1 segundo
-            Invoke("desaturdir", 1);
-       
     }
-    //creo metdodo nuevo para que no este siempre aturdido mi personaje
-    private void desaturdir()
-    {
-        aturdido = false;
-    }
+   
     public void perderVida(int puntosVida, GameObject atacante)
     {
         print(name + "Muere por " + atacante.name);
@@ -67,9 +62,25 @@ public class Personaje : MonoBehaviour
         hp = 0;
         //creo una instancia de la parte de sangre
         GameObject sangre = Instantiate(efectoSangrePrefab,transform);
+        miAnimador.SetTrigger("Morir");
+        misSonidos.reproducir("Morir");
+
+        muerto = true;
+    }
+    //creo metdodo nuevo para que no este siempre aturdido mi personaje
+    private void desaturdir()
+    {
+        aturdido = false;
+    }
+    public void matar(GameObject atacante)
+    {
+        print(name + "Muere por " + atacante.name);
+        vidas = 0;
+        hp = 0;
+        miAnimador.SetTrigger("MATAR");
         misSonidos.reproducir("MATAR");
 
+        muerto = true;
     }
-       
 }
 
